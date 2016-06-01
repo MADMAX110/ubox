@@ -96,10 +96,13 @@ payment = Ubox.notify_payment(tran_id: detail['body']['tran_id'],
                                   app_current_time: Time.now.to_i,
                                   deliver_now: true)
 ```
-
+#### 商品已售空
 ```json
-
-
+{"head":{
+    "return_code":410, 
+    "return_msg":"该商品已售空"
+ }
+}
 ```
 
 ### getTradeOrderStatus 出货结果询问 
@@ -107,8 +110,17 @@ payment = Ubox.notify_payment(tran_id: detail['body']['tran_id'],
 ```ruby
 status = Ubox.trade_order_status(tran_id: detail['body']['tran_id'])
 ```
-
+#### 出货失败
 ```json
+{"head":{
+    "return_code":200, 
+    "return_msg":"正常响应"
+ }, 
+ "body":{
+    "code":500, 
+    "msg":"出货失败"
+ }
+}
 ```
 
 ## Development
