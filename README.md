@@ -34,9 +34,9 @@ Or install it yourself as:
 
 ## Usage
 
-###获取商品信息(扫码)
+###getProductDetail 获取商品信息(扫码)
 ```ruby
-Ubox.product_detail('http://v.dev.uboxol.com/qr/c0081801_10000870_1')
+Ubox.product_detail(qr_string:'http://v.dev.uboxol.com/qr/c0081801_10000870_1')
 ```
 
 ```json
@@ -71,9 +71,9 @@ Ubox.product_detail('http://v.dev.uboxol.com/qr/c0081801_10000870_1')
  }
 }
 ```
-### 扫码下单请求
+### notifyOrder 扫码下单请求
 ```ruby
-detail = Ubox.product_detail('http://v.dev.uboxol.com/qr/c0081801_10000870_1')
+detail = Ubox.product_detail(qr_string:'http://v.dev.uboxol.com/qr/c0081801_10000870_1')
 notify = Ubox.notify_order(tran_id: detail['body']['tran_id'],
                            retain_period: 300,
                            app_tran_id: Random.rand_str(32),
