@@ -47,4 +47,22 @@ module Ubox
     JSON.parse(body)
   end
 
+  #扫码下单请求
+  #notify_order(tran_id:xxxx,retain_period:300,app_tran_id:xxxx,app_uid:uid)
+  def notify_order(attributes)
+    puts attributes
+    params = {
+        app_id: self.config.app_id,
+        tran_id: attributes[:tran_id]
+    }.merge(attributes)
+    params = params.merge({sign: self.sign(params)})
+
+    url = "#{self.config.api_url}/notifyOrder"
+    uri = URI(url)
+    res = Net::HTTP.post_form(uri, params)
+
+    body = res.body
+    JSON.parse(body)
+  end
+
 end

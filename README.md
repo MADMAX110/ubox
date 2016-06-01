@@ -71,7 +71,23 @@ Ubox.product_detail('http://v.dev.uboxol.com/qr/c0081801_10000870_1')
  }
 }
 ```
+### 扫码下单请求
+```ruby
+detail = Ubox.product_detail('http://v.dev.uboxol.com/qr/c0081801_10000870_1')
+notify = Ubox.notify_order(tran_id: detail['body']['tran_id'],
+                           retain_period: 300,
+                           app_tran_id: Random.rand_str(32),
+                           app_uid: Random.rand_str(32)
+     )
+```
 
+```json
+{"head":{
+    "return_code":200, 
+    "return_msg":"正常响应"
+  }
+}
+```
 
 ## Development
 
