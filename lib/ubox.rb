@@ -36,7 +36,6 @@ module Ubox
     puts attributes
     params = {
         app_id: self.config.app_id,
-        tran_id: attributes[:tran_id]
     }.merge(attributes)
     params = params.merge({sign: self.sign(params)})
 
@@ -60,9 +59,15 @@ module Ubox
   end
 
   #m买取货吗(支付结果通知)
-  #notify_payment(tran_id:xxx,pay_time:13311111,app_current_time:true,deliver_now:true)
+  #notify_payment(tran_id:xxx,pay_time: Time.now.to_i,app_current_time: Time.now.to_i,deliver_now:true)
   def notify_payment(attributes)
     post_request('/notifyPayment', attributes)
   end
 
+
+  #出货结果询问
+  #trade_order_status(tran_id:xxx)
+  def trade_order_status(attributes)
+    post_request('/getTradeOrderStatus', attributes)
+  end
 end

@@ -36,7 +36,7 @@ Or install it yourself as:
 
 ###getProductDetail 获取商品信息(扫码)
 ```ruby
-Ubox.product_detail(qr_string:'http://v.dev.uboxol.com/qr/c0081801_10000870_1')
+detail=Ubox.product_detail(qr_string:'http://v.dev.uboxol.com/qr/c0081801_10000870_1')
 ```
 
 ```json
@@ -73,7 +73,6 @@ Ubox.product_detail(qr_string:'http://v.dev.uboxol.com/qr/c0081801_10000870_1')
 ```
 ### notifyOrder 扫码下单请求
 ```ruby
-detail = Ubox.product_detail(qr_string:'http://v.dev.uboxol.com/qr/c0081801_10000870_1')
 notify = Ubox.notify_order(tran_id: detail['body']['tran_id'],
                            retain_period: 300,
                            app_tran_id: Random.rand_str(32),
@@ -87,6 +86,29 @@ notify = Ubox.notify_order(tran_id: detail['body']['tran_id'],
     "return_msg":"正常响应"
   }
 }
+```
+
+### notifyPament 买取货码(支付结果通知)
+
+```ruby
+payment = Ubox.notify_payment(tran_id: detail['body']['tran_id'],
+                                  pay_time: Time.now.to_i,
+                                  app_current_time: Time.now.to_i,
+                                  deliver_now: true)
+```
+
+```json
+
+
+```
+
+### getTradeOrderStatus 出货结果询问 
+
+```ruby
+status = Ubox.trade_order_status(tran_id: detail['body']['tran_id'])
+```
+
+```json
 ```
 
 ## Development
