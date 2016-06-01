@@ -70,4 +70,9 @@ module Ubox
   def trade_order_status(attributes)
     post_request('/getTradeOrderStatus', attributes)
   end
+
+  #搜索售货机接口
+  def search_vm_list(attributes)
+    post_request('/searchVmList', attributes)
+  end
 end

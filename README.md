@@ -123,6 +123,16 @@ status = Ubox.trade_order_status(tran_id: detail['body']['tran_id'])
 }
 ```
 
+### searchVmList 搜索售货机接口
+
+```ruby
+list = Ubox.search_vm_list(keyword:'北京香颂')
+```
+
+```json
+
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
