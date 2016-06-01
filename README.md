@@ -53,7 +53,7 @@ Ubox.product_detail('http://v.dev.uboxol.com/qr/c0081801_10000870_1')
        "lng": "39.960201",
        "vm_connected": true
     },
-    "product: {
+    "product": {
           "id": 10000870,
           "name": "双层咖啡杯",
           "oldPrice": 200,
