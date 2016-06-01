@@ -1,8 +1,6 @@
 # Ubox
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ubox`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+友宝开放api
 
 ## Installation
 
@@ -20,9 +18,55 @@ Or install it yourself as:
 
     $ gem install ubox
 
+## Config
+```ruby
+  Ubox.configure do |ubox|
+    ubox.app_id = 'your_app_id'
+    ubox.app_key = 'your_app_key' 
+    ubox.api_url = 'http://uboxapi.dev.uboxol.com/opentrade' #正式环境请用正式环境url
+  end
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+###获取商品信息(扫码)
+```ruby
+Ubox.product_detail('http://v.dev.uboxol.com/qr/c0081801_10000870_1')
+```
+
+```json
+{
+ head: {
+      return_code: 200,
+      return_msg: "正常响应"
+ },
+ body: {
+     vm: {
+       id: "0081801",
+       name: "友宝在线六层富二代完鼎测试需要改动名称完鼎测试需要改动名称完",
+       address: "北京111111",
+       distance: "",
+       is_shop: false,
+       has_box: false,
+       has_meal: false,
+       lat: "116.480557",
+       lng: "39.960201",
+       vm_connected: true
+    },
+    product: {
+          id: 10000870,
+          name: "双层咖啡杯",
+          oldPrice: 200,
+          price: 200,
+          expire_time: 1464856997,
+          pic: "http://vms.dev.uboxol.com/upload/box-tmp/m/10000870/10000870.jpg?t=1357177524",
+          num: 16
+   },
+   tran_id: "100031290"
+ }
+}
+```
+
 
 ## Development
 
