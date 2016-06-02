@@ -366,6 +366,7 @@ deliver = Ubox.deliver_trade(tran_id: delivery_code['body']['delivery_code'])
 ```ruby
 in_vm = Ubox.check_product_in_vm(vmid: '0061029', product_id: 19458, vTypeId: 1)
 ```
+
 ```json
 {
   "head": {
@@ -373,7 +374,7 @@ in_vm = Ubox.check_product_in_vm(vmid: '0061029', product_id: 19458, vTypeId: 1)
     "return_msg": "不支持售卖"
   }
 }
-```json
+```
 
 ## Development
 
