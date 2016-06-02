@@ -75,4 +75,9 @@ module Ubox
   def search_vm_list(attributes)
     post_request('/searchVmList', attributes)
   end
+
+  #根据售货机查询商品列表接口
+  def product_list(attributes)
+    post_request('/productList', attributes)
+  end
 end

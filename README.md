@@ -130,7 +130,207 @@ list = Ubox.search_vm_list(keyword:'北京香颂')
 ```
 
 ```json
+{
+  "head": {
+    "return_code": 200,
+    "return_msg": "正常响应"
+  },
+  "body": {
+    "node_list": [
+      {
+        "id": "1611",
+        "name": "北京香颂",
+        "address": "望京北京香颂224号楼306室",
+        "distance": "",
+        "is_shop": true,
+        "has_box": true,
+        "has_meal": false,
+        "lat": "39.998533",
+        "lng": "116.45923",
+        "vm_connected": true
+      }
+    ],
+    "has_more": false
+  }
+}
+```
 
+### productList 根据售货机获取商品列表
+
+```ruby
+products = Ubox.product_list(vmid: '0061029')
+```
+
+```json
+{
+  "head": {
+    "return_code": 200,
+    "return_msg": "正常响应"
+  },
+  "body": {
+    "shelfs": [
+      {
+        "id": 1,
+        "name": "热销",
+        "url": "",
+        "products": [
+          19401,
+          24605,
+          19492,
+          24602,
+          19458,
+          19450,
+          19497,
+          19461,
+          19463,
+          24601,
+          19474
+        ]
+      },
+      {
+        "id": 113,
+        "name": "百货",
+        "url": "",
+        "products": [
+          19401,
+          19450,
+          19458,
+          19461,
+          19463,
+          19474,
+          19492,
+          19497,
+          24601,
+          24602,
+          24605
+        ]
+      }
+    ],
+    "products": [
+      {
+        "id": 19401,
+        "name": "魅蓝伸缩飞机杯",
+        "sName": "魅蓝伸缩飞机杯",
+        "price": 39900,
+        "oldPrice": 39900,
+        "desc": "",
+        "expire_time": 1464934974,
+        "pic": "http://img.ubox.cn/box-tmp/m/19401/19401.jpg?t=20151117135023",
+        "num": 1
+      },
+      {
+        "id": 19450,
+        "name": "品色国际帝王之器转珠棒",
+        "sName": "品色国际帝王之器转珠棒",
+        "price": 16800,
+        "oldPrice": 16800,
+        "desc": "",
+        "expire_time": 1464934974,
+        "pic": "http://img.ubox.cn/box-tmp/m/19450/19450.jpg?t=20151118130540",
+        "num": 1
+      },
+      {
+        "id": 19497,
+        "name": "冈本skin纯淡香味3只装",
+        "sName": "冈本skin纯淡香味",
+        "price": 1200,
+        "oldPrice": 1200,
+        "desc": "",
+        "expire_time": 1464934974,
+        "pic": "http://img.ubox.cn/box-tmp/m/19497/19497.jpg?t=20151118140955",
+        "num": 1
+      },
+      {
+        "id": 19461,
+        "name": "玩爆潮品震动水晶套飞毛腿",
+        "sName": "玩爆潮品震动水晶套飞毛腿",
+        "price": 4900,
+        "oldPrice": 4900,
+        "desc": "",
+        "expire_time": 1464934974,
+        "pic": "http://img.ubox.cn/box-tmp/m/19461/19461.jpg?t=20151118131354",
+        "num": 1
+      },
+      {
+        "id": 19492,
+        "name": "MOVO女用提升欲望润滑液100ml",
+        "sName": "MOVO女用提升欲望润滑",
+        "price": 13800,
+        "oldPrice": 13800,
+        "desc": "",
+        "expire_time": 1464934974,
+        "pic": "http://img.ubox.cn/box-tmp/m/19492/19492.jpg?t=20151118140611",
+        "num": 1
+      },
+      {
+        "id": 24605,
+        "name": "瑟诗芭比缕空露乳连体袜",
+        "sName": "缕空露乳连体袜",
+        "price": 9900,
+        "oldPrice": 9900,
+        "desc": "",
+        "expire_time": 1464934974,
+        "pic": "http://img.ubox.cn/box-tmp/m/24605/24605.jpg?t=20160519174238",
+        "num": 1
+      },
+      {
+        "id": 19463,
+        "name": "玩爆潮品震动水晶套流星锤",
+        "sName": "玩爆潮品震动水晶套流星锤",
+        "price": 4900,
+        "oldPrice": 4900,
+        "desc": "",
+        "expire_time": 1464934974,
+        "pic": "http://img.ubox.cn/box-tmp/m/19463/19463.jpg?t=20151118131515",
+        "num": 1
+      },
+      {
+        "id": 24602,
+        "name": "久兴20频狂舔魔舌震动器颗粒型",
+        "sName": "狂舔魔舌震动器颗粒型",
+        "price": 12800,
+        "oldPrice": 12800,
+        "desc": "",
+        "expire_time": 1464934974,
+        "pic": "http://img.ubox.cn/box-tmp/m/24602/24602.jpg?t=20160519173901",
+        "num": 1
+      },
+      {
+        "id": 19458,
+        "name": "VNA藏帝男用延时喷剂15ml",
+        "sName": "VNA藏帝男用延时喷剂",
+        "price": 19900,
+        "oldPrice": 19900,
+        "desc": "",
+        "expire_time": 1464934974,
+        "pic": "http://img.ubox.cn/box-tmp/m/19458/19458.jpg?t=20151118131152",
+        "num": 1
+      },
+      {
+        "id": 24601,
+        "name": "蒂贝女用振动棒潮吹蛇王",
+        "sName": "潮吹蛇王",
+        "price": 16800,
+        "oldPrice": 16800,
+        "desc": "",
+        "expire_time": 1464934974,
+        "pic": "http://img.ubox.cn/box-tmp/m/24601/24601.jpg?t=20160519173745",
+        "num": 1
+      },
+      {
+        "id": 19474,
+        "name": "倍耐力男用延时喷剂",
+        "sName": "倍耐力男用延时喷剂",
+        "price": 3900,
+        "oldPrice": 3900,
+        "desc": "",
+        "expire_time": 1464934974,
+        "pic": "http://img.ubox.cn/box-tmp/m/19474/19474.jpg?t=20151118135030",
+        "num": 1
+      }
+    ]
+  }
+}
 ```
 
 ## Development
