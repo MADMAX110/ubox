@@ -332,6 +332,28 @@ products = Ubox.product_list(vmid: '0061029')
   }
 }
 ```
+### orderCode 根据商品和售货机买码接口
+```ruby
+delivery_code = Ubox.order_code(vmid: '0061029',
+                                    product_id: list['body']['products'][0]['id'],
+                                    app_uid: Random.rand_str(32),
+                                    app_tran_id: Random.rand_str(32))
+```
+```json
+{
+  "head": {
+    "return_code": 200,
+    "return_msg": "正常响应"
+  },
+  "body": {
+    "delivery_code": "53830",
+    "vmid": "0061029",
+    "expire_time": 1464862845,
+    "box_number": "A07",
+    "tran_id": "106179946"
+  }
+}
+```
 
 ## Development
 

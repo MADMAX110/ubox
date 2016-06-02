@@ -80,4 +80,9 @@ module Ubox
   def product_list(attributes)
     post_request('/productList', attributes)
   end
+
+  #根据售货机和商品买码接口
+  def order_code(attributes)
+    post_request('/orderCode', attributes)
+  end
 end
