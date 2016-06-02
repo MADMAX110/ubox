@@ -362,6 +362,19 @@ deliver = Ubox.deliver_trade(tran_id: delivery_code['body']['delivery_code'])
 ```json
 ```
 
+### checkProductInVm 查询售货机货道是否售卖某个商品
+```ruby
+in_vm = Ubox.check_product_in_vm(vmid: '0061029', product_id: 19458, vTypeId: 1)
+```
+```json
+{
+  "head": {
+    "return_code": 504,
+    "return_msg": "不支持售卖"
+  }
+}
+```json
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

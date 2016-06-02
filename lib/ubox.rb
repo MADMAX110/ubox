@@ -67,7 +67,6 @@ module Ubox
     post_request('/notifyPayment', attributes)
   end
 
-
   #出货结果询问
   #trade_order_status(tran_id:xxx)
   def trade_order_status(attributes)
@@ -94,4 +93,8 @@ module Ubox
     post_request('/deliverTrade', attributes)
   end
 
+  #查询售货机货道是否售卖某个商品
+  def check_product_in_vm(attributes)
+    post_request('/checkProductInVm', attributes)
+  end
 end
