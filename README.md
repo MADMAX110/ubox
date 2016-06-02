@@ -391,7 +391,7 @@ vm_status = Ubox.check_vm_status(vmid: '0061029')
 ```
 
 
-### checkVmstatus 检查售货机是否联网
+### productInfo 根据商品id和售货机编号获取商品详情
 ```ruby
 product_info = Ubox.product_info(vmid: '0061029', productid: 19458)
 ```
