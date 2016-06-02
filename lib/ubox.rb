@@ -33,17 +33,20 @@ module Ubox
 
 
   def post_request(api_path, attributes)
-    puts attributes
     params = {
         app_id: self.config.app_id,
     }.merge(attributes)
     params = params.merge({sign: self.sign(params)})
+
+    puts "\n\n#{api_path}\n"
+    puts params
 
     url = "#{self.config.api_url}/#{api_path}"
     uri = URI(url)
     res = Net::HTTP.post_form(uri, params)
 
     body = res.body
+    puts body
     JSON.parse(body)
   end
 
@@ -85,4 +88,10 @@ module Ubox
   def order_code(attributes)
     post_request('/orderCode', attributes)
   end
+
+  #出货接口
+  def deliver_trade(attributes)
+    post_request('/deliverTrade', attributes)
+  end
+
 end
