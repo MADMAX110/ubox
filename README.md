@@ -376,6 +376,20 @@ in_vm = Ubox.check_product_in_vm(vmid: '0061029', product_id: 19458, vTypeId: 1)
 }
 ```
 
+### checkVmstatus 检查售货机是否联网
+```ruby
+vm_status = Ubox.check_vm_status(vmid: '0061029')
+```
+
+```json
+{
+  "head": {
+    "return_code": 200,
+    "return_msg": "正常响应"
+  }
+}
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

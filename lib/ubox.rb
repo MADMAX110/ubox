@@ -97,4 +97,9 @@ module Ubox
   def check_product_in_vm(attributes)
     post_request('/checkProductInVm', attributes)
   end
+
+  #检查售货机是否联网
+  def check_vm_status(attributes)
+    post_request('/checkVmstatus', attributes)
+  end
 end
