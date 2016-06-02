@@ -390,6 +390,46 @@ vm_status = Ubox.check_vm_status(vmid: '0061029')
 }
 ```
 
+
+### checkVmstatus 检查售货机是否联网
+```ruby
+product_info = Ubox.product_info(vmid: '0061029', productid: 19458)
+```
+
+```json
+{
+  "head": {
+    "return_code": 200,
+    "return_msg": "正常响应"
+  },
+  "body": {
+    "product": {
+      "productId": 19458,
+      "shortName": "VNA藏帝男用延时喷剂",
+      "fullName": "VNA藏帝男用延时喷剂15ml",
+      "offeredPrice": 19900,
+      "retailPrice": 19900,
+      "num": 1,
+      "picMap": [
+        "http://img.ubox.cn/box-tmp/m/19458/19458.jpg?t=20151118131152",
+        "http://img.ubox.cn/box-tmp/19458/19458.png?t=20151118131152"
+      ],
+      "discountRate": 100,
+      "brandId": 707614,
+      "brandName": "首趣",
+      "tabCategoryId": 3,
+      "typeName": "百货",
+      "description": "",
+      "reason": "",
+      "icon": "",
+      "actionId": "",
+      "endTime": "",
+      "productCode": "6951757100632"
+    }
+  }
+}
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

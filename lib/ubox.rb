@@ -102,4 +102,9 @@ module Ubox
   def check_vm_status(attributes)
     post_request('/checkVmstatus', attributes)
   end
+
+  #根据商品id和售货机编号获取商品详情
+  def product_info(attributes)
+    post_request('/productInfo', attributes)
+  end
 end
