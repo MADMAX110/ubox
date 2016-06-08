@@ -27,7 +27,7 @@ Or install it yourself as:
 ```ruby
   Ubox.configure do |ubox|
     ubox.app_id = 'your_app_id'
-    ubox.app_key = 'your_app_key' 
+    ubox.app_key = 'your_app_key'
     ubox.api_url = 'http://uboxapi.dev.uboxol.com/opentrade' #正式环境请用正式环境url
   end
 ```
@@ -82,7 +82,7 @@ notify = Ubox.notify_order(tran_id: detail['body']['tran_id'],
 
 ```json
 {"head":{
-    "return_code":200, 
+    "return_code":200,
     "return_msg":"正常响应"
   }
 }
@@ -99,13 +99,27 @@ payment = Ubox.notify_payment(tran_id: detail['body']['tran_id'],
 #### 商品已售空
 ```json
 {"head":{
-    "return_code":410, 
+    "return_code":410,
     "return_msg":"该商品已售空"
  }
 }
 ```
+#### 正常响应
+```json
+{"head":{
+    "return_code":200,
+    "return_msg":"正常响应"
+  },
+"body":{
+    "delivery_code":"23107",
+    "vmid":"0061029",
+    "expire_time":1465356330,
+    "box_number":"A50"
+    }
+}
+```
 
-### getTradeOrderStatus 出货结果询问 
+### getTradeOrderStatus 出货结果询问
 
 ```ruby
 status = Ubox.trade_order_status(tran_id: detail['body']['tran_id'])
@@ -113,11 +127,11 @@ status = Ubox.trade_order_status(tran_id: detail['body']['tran_id'])
 #### 出货失败
 ```json
 {"head":{
-    "return_code":200, 
+    "return_code":200,
     "return_msg":"正常响应"
- }, 
+ },
  "body":{
-    "code":500, 
+    "code":500,
     "msg":"出货失败"
  }
 }
@@ -444,4 +458,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
